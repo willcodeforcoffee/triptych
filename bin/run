@@ -1,0 +1,4 @@
+#!/bin/bash
+# Run a command within the docker container using the environment values from .env
+export $(grep -v '^#' .env | xargs) && \
+  docker run --name triptych -v $PWD:/app/ --env-file=.env --rm --interactive triptych:latest "$@"
