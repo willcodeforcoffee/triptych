@@ -1,10 +1,13 @@
 #!/bin/sh
-echo "Starting development environment"
+echo ">>> Initializing development environment"
 bundle install
 yarn install
 
+echo ">>> Initializing the database: create"
 rake db:create
+echo ">>> Initializing the database: migrate"
 rake db:migrate
+echo ">>> Initializing the database: seed"
 rake db:seed
 
 export $(grep -v '^#' .env | xargs) && \

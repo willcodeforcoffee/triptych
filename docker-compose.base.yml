@@ -2,6 +2,8 @@ version: '3'
 services:
   db:
     image: postgres:11.1-alpine
+  redis:
+    image: redis:4.0.12-alpine
   web:
     build:
       dockerfile: Dockerfile
