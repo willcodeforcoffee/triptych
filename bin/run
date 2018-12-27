@@ -1,4 +1,4 @@
 #!/bin/bash
 # Run a command within the docker container using the environment values from .env
 export $(grep -v '^#' .env | xargs) && \
-  docker run --name triptych -v $PWD:/app/ --env-file=.env --rm --interactive triptych:latest "$@"
+  docker run --name triptych -v $PWD:/triptych/ -v $PWD/docker/data/web/tmp:/triptych/tmp -v $PWD/docker/data/web/log:/triptych/log -v $PWD/docker/data/web/node_modules:/triptych/node_modules --env-file=.env -e TZ=$(date "+%Z") --rm --interactive triptych:latest "$@"

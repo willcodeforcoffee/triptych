@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    command: bin/start
+    tty: true
+    stdin_open: true
+    environment:
+      - "RAILS_YARN_INTEGRITY_CHECK=true"
+    volumes:
+      - .:/triptych
+      - ./docker/data/web/tmp:/triptych/tmp
+      - ./docker/data/web/log:/triptych/log
+      - ./docker/data/web/bundle:/usr/local/bundle
+      - ./docker/data/web/node_modules:/triptych/node_modules
+  db:
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=postgres"
+    volumes:
+      - ./tmp/docker/db:/var/lib/postgresql/data

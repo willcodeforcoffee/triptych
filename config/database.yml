@@ -26,7 +26,7 @@ development:
   database: triptych_development
   host:     db
   username: postgres
-  password:
+  password: postgres
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

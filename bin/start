@@ -1,0 +1,11 @@
+#!/bin/sh
+echo "Starting development environment"
+bundle install
+yarn install
+
+rake db:create
+rake db:migrate
+rake db:seed
+
+export $(grep -v '^#' .env | xargs) && \
+  bin/rails s -p 4000 -b '0.0.0.0' -e development
