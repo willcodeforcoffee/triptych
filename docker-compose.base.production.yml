@@ -1,0 +1,13 @@
+# Docker Overrides for production build
+---
+services:
+  db:
+    volumes:
+      - ${POSTGRES_VOLUME_DATA}:/var/lib/postgresql/data:rw
+  redis:
+    volumes:
+      - ${REDIS_VOLUME_DATA}:/data
+  web:
+    volumes:
+      - .:/triptych
+      - ${WEB_VOLUME_DATA}/log:/triptych/log

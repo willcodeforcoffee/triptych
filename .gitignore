@@ -52,6 +52,7 @@ docker/
 # Ignore because it should be generated:
 # (generate via: bin/run bin/rake build:compose:files)
 docker-compose.yml
+docker-compose.production.yml
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
