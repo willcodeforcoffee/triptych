@@ -1,0 +1,13 @@
+# See all descriptions at this link
+# https://www.rubydoc.info/gems/rubocop/RuboCop
+AllCops:
+  TargetRubyVersion: 2.5
+  TargetRailsVersion: 5.2
+
+# Project Rubocop defs
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

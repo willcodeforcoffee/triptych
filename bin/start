@@ -10,5 +10,8 @@ rake db:migrate
 echo ">>> Initializing the database: seed"
 rake db:seed
 
+# Not sure if I want to keep this line outside of dev
+rm /triptych/tmp/pids/server.pid
+
 export $(grep -v '^#' .env | xargs) && \
   bin/rails s -p 4000 -b '0.0.0.0' -e development
