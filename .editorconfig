@@ -1,0 +1,8 @@
+# Let prettier do most of the prettifiying
+[*]
+end_of_line = lf
+charset = utf-8
+
+[*.ps1]
+end_of_line = crlf
+charset = utf-8
