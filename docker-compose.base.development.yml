@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   web:
     command: bin/start
@@ -12,8 +12,8 @@ services:
       - .:/triptych
       - ./docker/data/web/tmp:/triptych/tmp
       - ./docker/data/web/log:/triptych/log
-      - ./docker/data/web/bundle:/usr/local/bundle
-      - ./docker/data/web/node_modules:/triptych/node_modules
+      # - ./docker/data/web/bundle:/usr/local/bundle
+      # - ./docker/data/web/node_modules:/triptych/node_modules
   db:
     env_file:
       - .env
@@ -21,7 +21,7 @@ services:
       - "POSTGRES_USER=postgres"
       - "POSTGRES_PASSWORD=postgres"
     volumes:
-      - ./docker/data/db:/var/lib/postgresql/data
+      - ./docker/data/db:/var/lib/postgresql/data:rw
   redis:
     env_file:
       - .env
