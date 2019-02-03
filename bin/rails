@@ -1,4 +1,9 @@
 #!/usr/bin/env ruby
+puts "RAILS_ENV:     [#{ENV["RAILS_ENV"]}]"
+puts "NODE_ENV:      [#{ENV["NODE_ENV"]}]"
+puts "POSTGRES_HOST: [#{ENV["POSTGRES_HOST"]}]"
+puts "REDIS_HOST:    [#{ENV["REDIS_HOST"]}]"
+
 APP_PATH = File.expand_path('../config/application', __dir__)
 require_relative '../config/boot'
 require 'rails/commands'
