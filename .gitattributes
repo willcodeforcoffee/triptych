@@ -1,0 +1,6 @@
+*      text=auto eol=lf
+# For the Powershell scripts in bin
+*.ps1  text=auto eol=crlf
+
+# https://www.gitattributes.io/api/rails
+schema.rb merge=ours
