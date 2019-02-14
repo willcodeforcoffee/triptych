@@ -60,4 +60,4 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-gem 'bootstrap', '~> 4.2.1'
+gem 'bootstrap', '~> 4.3'
