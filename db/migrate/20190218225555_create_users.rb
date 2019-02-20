@@ -1,10 +1,10 @@
 class CreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
-      t.string :display_name
-      t.string :email_address
+      t.string :display_name, limit: 24, null: false
+      t.string :email_address, limit: 255, null: false
       t.string :tags, :array => true
-      t.boolean :enabled
+      t.boolean :enabled, null: false
 
       t.timestamps
     end

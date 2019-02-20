@@ -10,9 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_02_20_143931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "password_credentials", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "scheme", limit: 24, null: false
+    t.binary "data1"
+    t.binary "data2"
+    t.datetime "valid_until"
+    t.boolean "enabled", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_password_credentials_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "display_name", limit: 24, null: false
+    t.string "email_address", limit: 255, null: false
+    t.string "tags", array: true
+    t.boolean "enabled", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email_address"], name: "index_users_on_email_address", unique: true
+  end
+
+  add_foreign_key "password_credentials", "users"
 end
