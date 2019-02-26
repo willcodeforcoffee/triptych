@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe PasswordCredential, type: :model do
-  describe "defaults" do
+  context "defaults" do
     subject do
       # Don't use the factory
       cred = PasswordCredential.new
@@ -10,7 +10,7 @@ RSpec.describe PasswordCredential, type: :model do
     end
 
     it "should be enabled" do
-      expect (subject.enabled).to be_true
+      expect(subject.enabled?).to be true
     end
   end
 end
