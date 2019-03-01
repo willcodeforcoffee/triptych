@@ -16,7 +16,5 @@ CreateFolderIfNotExists($logPath)
 $nodeModulesPath = "${pwd}/docker/data/web/node_modules"
 CreateFolderIfNotExists($nodeModulesPath)
 
-Write-Host "args: ${args}"
-
-Write-Host "docker run --name triptych -v ${pwd}:/triptych/ -v ${tmpPath}:/triptych/tmp -v ${logPath}:/triptych/log -v ${nodeModulesPath}:/triptych/node_modules --env-file=.env -e TZ=${Get-Date -UFormat "%Z"} --rm --interactive triptych:latest chmod bin/* 755 && ${args}"
+# Write-Host "docker run --name triptych -v ${pwd}:/triptych/ -v ${tmpPath}:/triptych/tmp -v ${logPath}:/triptych/log -v ${nodeModulesPath}:/triptych/node_modules --env-file=.env -e TZ=${Get-Date -UFormat "%Z"} --rm --interactive triptych:latest chmod bin/* 755 && ${args}"
 docker run --name triptych -v ${pwd}:/triptych/ -v ${tmpPath}:/triptych/tmp -v ${logPath}:/triptych/log -v ${nodeModulesPath}:/triptych/node_modules --env-file=.env -e TZ=${Get-Date -UFormat "%Z"} --rm --interactive triptych:latest ${args}

@@ -61,6 +61,6 @@ group :test do
 end
 
 gem 'awesome_print', '~> 1.8'
-gem 'bootstrap', '~> 4.2.1'
+gem 'bootstrap', '~> 4.3'
 gem 'colorize', '~> 0.8.1'
 gem 'devise'
