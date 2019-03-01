@@ -60,4 +60,7 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+gem 'awesome_print', '~> 1.8'
 gem 'bootstrap', '~> 4.3'
+gem 'colorize', '~> 0.8.1'
+gem 'devise'
