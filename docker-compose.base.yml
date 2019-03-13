@@ -3,14 +3,10 @@ services:
   db:
     image: postgres:11.1-alpine
   redis:
-    image: redis:4.0.12-alpine
+    image: redis:4.0.13-alpine
   web:
-    build:
-      dockerfile: Dockerfile
-      context: .
-    command: bundle exec rails s -p 4000 -b '0.0.0.0'
     ports:
-      - "4000:4000"
+      - '4000:4000'
     depends_on:
       - db
       - redis

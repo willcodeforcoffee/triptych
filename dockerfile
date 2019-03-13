@@ -1,7 +1,7 @@
 FROM ruby:2.5.3-stretch
 
 LABEL "name"="triptych"
-LABEL "version"="0.1.1"
+LABEL "version"="0.2.0"
 LABEL "description"="Triptych: a personal aggregator"
 
 # Install dependencies: node, yarn, etc
@@ -20,3 +20,9 @@ COPY Gemfile Gemfile.lock package.json yarn.lock /triptych/
 RUN bundle install \
     && yarn install
 COPY . /triptych
+
+EXPOSE 4000
+
+# Production ready compilation
+RUN rake webpacker:compile
+RUN rake assets:precompile

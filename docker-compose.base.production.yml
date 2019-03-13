@@ -8,6 +8,8 @@ services:
     volumes:
       - ${REDIS_VOLUME_DATA}:/data
   web:
+    image: triptych:latest
+    command: bundle exec rails s -p 4000 -b '0.0.0.0'
     volumes:
       - .:/triptych
       - ${WEB_VOLUME_DATA}/log:/triptych/log

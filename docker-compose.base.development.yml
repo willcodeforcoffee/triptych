@@ -1,13 +1,16 @@
-version: "3"
+version: '3'
 services:
   web:
+    build:
+      dockerfile: Dockerfile
+      context: .
     command: bin/start
     tty: true
     stdin_open: true
     env_file:
       - .env
     environment:
-      - "RAILS_YARN_INTEGRITY_CHECK=true"
+      - 'RAILS_YARN_INTEGRITY_CHECK=true'
     volumes:
       - .:/triptych
       - ./docker/data/web/tmp:/triptych/tmp
@@ -17,9 +20,6 @@ services:
   db:
     env_file:
       - .env
-    environment:
-      - "POSTGRES_USER=postgres"
-      - "POSTGRES_PASSWORD=postgres"
     volumes:
       - ./docker/data/db:/var/lib/postgresql/data:rw
   redis:
