@@ -2,9 +2,15 @@ version: '3'
 services:
   db:
     image: postgres:11.1-alpine
+    env_file:
+      - .env
   redis:
     image: redis:4.0.13-alpine
+    env_file:
+      - .env
   web:
+    env_file:
+      - .env
     ports:
       - '4000:4000'
     depends_on:
