@@ -1,8 +1,8 @@
 FROM ruby:2.5.3-stretch
 
-LABEL "name"="triptych"
-LABEL "version"="0.2.0"
-LABEL "description"="Triptych: a personal aggregator"
+LABEL "name"="triptych" \
+    "description"="Triptych: a personal aggregator" \
+    "version"="0.3.0"
 
 # Install dependencies: node, yarn, etc
 RUN curl -sL https://deb.nodesource.com/setup_10.x | /bin/bash - \
