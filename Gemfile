@@ -41,6 +41,10 @@ group :development, :test do
   gem 'factory_bot'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
+
+  gem "pry-rails"
+  gem "pry-byebug", :platform => [:mri]
+  gem "pry-rescue"
 end
 
 group :development do
