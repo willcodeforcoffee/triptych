@@ -1,0 +1,20 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+	"dockerComposeFile": [
+    "./docker-compose.base.yml",
+    "./docker-compose.base.development.yml"
+  ],
+	"service": "web",
+	"workspaceFolder": "//triptych",
+	"appPort": [4000],
+	"extensions": [
+		"editorconfig.editorconfig",
+		"esbenp.prettier-vscode",
+		"rebornix.ruby",
+		"ms-azuretools.vscode-docker",
+		"mikestead.dotenv",
+		"christian-kohler.path-intellisense",
+		"infeng.vscode-react-typescript",
+		"ckolkman.vscode-postgres"
+	]
+}
