@@ -15,7 +15,7 @@ services:
       - ./docker/data/web/log:/triptych/log
       # - ./docker/data/web/bundle:/usr/local/bundle
       # - ./docker/data/web/node_modules:/triptych/node_modules
-  db:
+  postgres:
     volumes:
       - ./docker/data/db:/var/lib/postgresql/data:rw
   redis:

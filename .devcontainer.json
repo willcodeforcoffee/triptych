@@ -2,7 +2,8 @@
 {
 	"dockerComposeFile": [
     "./docker-compose.base.yml",
-    "./docker-compose.base.development.yml"
+	"./docker-compose.base.development.yml",
+	"./docker-compose.local.yml"
   ],
 	"service": "web",
 	"workspaceFolder": "//triptych",
