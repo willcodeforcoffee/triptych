@@ -1,3 +1,4 @@
+# TODO This should build the Production Image
 FROM ruby:2.5.3-stretch
 
 LABEL "name"="triptych" \
@@ -22,3 +23,7 @@ RUN bundle install \
 COPY . /triptych
 
 EXPOSE 4000
+
+# Production ready compilation
+RUN rake webpacker:compile
+RUN rake assets:precompile
